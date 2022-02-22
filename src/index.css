@@ -73,6 +73,10 @@ header {
 	transition: 0.3s;
 }
 
+.rating li {
+	color: #000000;
+}
+
 .rating li label {
 	position: absolute;
 	top: 50%;
