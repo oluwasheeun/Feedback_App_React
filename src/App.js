@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import Card from './components/shared/Card'
 import Header from './components/Header'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackList from './components/FeedbackList'
