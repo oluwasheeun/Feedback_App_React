@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState } from 'react'
 import FeedbackData from '../data/FeedbackData'
 
 const FeedbackContext = createContext()
