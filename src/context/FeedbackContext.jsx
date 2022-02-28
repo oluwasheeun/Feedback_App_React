@@ -5,6 +5,7 @@ import { dblClick } from '@testing-library/user-event/dist/click'
 const FeedbackContext = createContext()
 
 export const FeedbackProvider = ({ children }) => {
+	const [ isLoading, setIsloading ] = useState(true)
 	const [ feedback, setFeedback ] = useState([])
 	const [ feedbackEdit, setFeedbackEdit ] = useState({ item: {}, edit: false })
 
@@ -16,7 +17,10 @@ export const FeedbackProvider = ({ children }) => {
 	const fetchFeedback = async () => {
 		const response = await fetch('http://localhost:5000/feedback?_sort=id&_order=desc')
 		const data = await response.json()
+
 		setFeedback(data)
+
+		setIsloading(false)
 	}
 
 	// Delete Feedback
@@ -50,6 +54,7 @@ export const FeedbackProvider = ({ children }) => {
 			value={{
 				feedback,
 				feedbackEdit,
+				isLoading,
 				addFeedback,
 				deleteFeedback,
 				editFeedback,
